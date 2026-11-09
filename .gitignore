@@ -1,0 +1,58 @@
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Frontend / Node
+node_modules/
+dist/
+npm-debug.log*
+
+# Electron / build
+release/
+build/
+*.spec
+
+# Base de données locale et sauvegardes
+*.db
+*.db-shm
+*.db-wal
+backups/
+
+# Secrets et configuration locale
+.env
+.env.*
+!.env.example
+
+# Éditeurs et système
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Données et fichiers sensibles
+*.sqlite
+*.sqlite3
+*.bak
+*.backup
+*.log
+
+# Certificats et clés privées
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Fichiers de configuration locaux
+config.local.*
+settings.local.*
+
+# Fichiers temporaires et rapports de test
+*.tmp
+*.temp
+
+!backend/StaffTrackBackend.spec

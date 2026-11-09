@@ -1,0 +1,252 @@
+
+/* Page du formulaire */
+.employee-form-page {
+  width: 100%;
+  animation: employee-form-appear 0.25s ease-out;
+}
+
+@keyframes employee-form-appear {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Carte principale */
+.employee-form-card {
+  overflow: hidden;
+  border: 1px solid #e5eae5;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 8px 28px rgba(39, 60, 43, 0.05);
+}
+
+/* En-tête */
+.employee-form-heading {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 30px 32px;
+  border-bottom: 1px solid #edf0ed;
+  background: linear-gradient(135deg, #f5f8f4, #ffffff);
+}
+
+.employee-form-icon {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 17px;
+  background: #e1ebe1;
+  color: #47664c;
+}
+
+.employee-form-heading h1 {
+  margin: 8px 0 6px;
+  color: #26372a;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.employee-form-heading p {
+  margin: 0;
+  color: #778278;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Grille des champs */
+.employee-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  padding: 30px 32px;
+}
+
+.employee-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  min-width: 0;
+}
+
+.employee-form-field label {
+  color: #354438;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.employee-form-field input {
+  width: 100%;
+  min-height: 46px;
+  box-sizing: border-box;
+  padding: 0 14px;
+  border: 1px solid #dfe6df;
+  border-radius: 10px;
+  outline: none;
+  background: #ffffff;
+  color: #29382c;
+  font-family: inherit;
+  font-size: 14px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.employee-form-field input::placeholder {
+  color: #a0aaa1;
+}
+
+.employee-form-field input:hover {
+  border-color: #bdcbbf;
+}
+
+.employee-form-field input:focus {
+  border-color: #819b84;
+  box-shadow: 0 0 0 3px rgba(129, 155, 132, 0.14);
+}
+
+.employee-form-field input[aria-invalid="true"] {
+  border-color: #c76b6b;
+  background: #fffafa;
+}
+
+.employee-field-error {
+  color: #b84d4d;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* Erreur renvoyée par l'API */
+.employee-form-api-error {
+  margin: 0 32px 24px;
+  padding: 13px 15px;
+  border: 1px solid #f0caca;
+  border-radius: 10px;
+  background: #fff5f5;
+  color: #a33f3f;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* Pied du formulaire */
+.employee-form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 22px 32px;
+  border-top: 1px solid #edf0ed;
+  background: #fbfcfb;
+}
+
+.employee-form-required {
+  color: #89938a;
+  font-size: 12px;
+}
+
+.employee-form-actions > div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.employee-form-cancel,
+.employee-form-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 17px;
+  border-radius: 9px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 650;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.employee-form-cancel {
+  border: 1px solid #dfe6df;
+  background: #ffffff;
+  color: #526456;
+}
+
+.employee-form-cancel:hover:not(:disabled) {
+  border-color: #bdcbbf;
+  background: #f1f5f1;
+}
+
+.employee-form-submit {
+  border: 1px solid #45684b;
+  background: #45684b;
+  color: #ffffff;
+}
+
+.employee-form-submit:hover:not(:disabled) {
+  border-color: #36563c;
+  background: #36563c;
+  transform: translateY(-1px);
+}
+
+.employee-form-cancel:disabled,
+.employee-form-submit:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+/* Adaptation aux petits écrans */
+@media (max-width: 640px) {
+  .employee-form-heading {
+    align-items: flex-start;
+    padding: 22px;
+  }
+
+  .employee-form-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+  }
+
+  .employee-form-heading h1 {
+    font-size: 21px;
+  }
+
+  .employee-form-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 24px 22px;
+  }
+
+  .employee-form-actions {
+    align-items: stretch;
+    flex-direction: column;
+    padding: 20px 22px;
+  }
+
+  .employee-form-actions > div {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .employee-form-cancel,
+  .employee-form-submit {
+    width: 100%;
+  }
+
+  .employee-form-api-error {
+    margin-right: 22px;
+    margin-left: 22px;
+  }
+}
